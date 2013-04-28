@@ -16,22 +16,22 @@ testmap.c - a test suite that hits key functionality
 -this is a rewrite of my previous chptr-chptr hashmap implementation
 -map has been generalized to be more extensible.  currently there is a chptr-chptr key-value type implemented, adding another type is straightforward, see below
 
-#compilation#
+###compilation###
 - make map.o, or make testmap
 - uncomment /* #define DEBUG */ in map.h to see the gory details of each map operation
 
-#usage#
+###usage###
 - see testmap.c for examples
 - be sure to map_destroy after done, and if map_keys is used be sure to free the type**
 
-#notes#
+###notes###
 
 - be sure to check for NULL on Solaris before using results, it isn't as forgiving
 
-#adding a user type map#
+###adding a user type map###
 
 1. implement type-spefic map functions in mapfn.c (header for them - mapfn.h)
-
+```
     unsigned long (*fn_hash)(map*,void*);        /* hash function for this map's key type */  
     int (*fn_put)(map*,void*,void*);             /* put function */
     int (*fn_get)(map*,void*,void*);             /* get function */
@@ -39,10 +39,10 @@ testmap.c - a test suite that hits key functionality
     int (*fn_destroy)(map*);                     /* map destroy function */
     int (*fn_rehash)(map*);                      /* rehash map function */
     int (*fn_keys)(map*,void**);                 /* given map and double ptr */
-
+```
 2. add the functions as function pointer table in mapconf.c (see mapconf.h for the structure)
 
 3. use, as done in testmap.c 
 
-#todo#
+###todo###
 - thread safety
