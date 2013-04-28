@@ -1,8 +1,8 @@
-A simple hashmap implementation in c, using separate chaining for collisions.
-This is a rewrite of my previous chptr-chptr hashmap implementation  
-Map has been generalized to be more extensible.  currently there is a chptr-chptr key-value type implemented, adding another type is straightforward, see below
+A simple hashmap implementation in c, using separate chaining for collisions.  This is a rewrite of my previous chptr-chptr hashmap implementation, but map has been generalized to be more extensible.  Currently there is a chptr-chptr key-value type implemented, adding another type is straightforward, see below.  
 
 Joseph Burns - 3/2007
+
+###files###
 
 Makefile - a sample makefile for building the map functions  
 map.c - the map implementation: calls both general and wrapper functions  
@@ -12,9 +12,6 @@ mapconf.c - function table that points to type-specific functions
 mapfn.h - header file for type-specific functions  
 mapfn.c - implementation of type-specific functions  
 testmap.c - a test suite that hits key functionality  
-
--this is a rewrite of my previous chptr-chptr hashmap implementation
--map has been generalized to be more extensible.  currently there is a chptr-chptr key-value type implemented, adding another type is straightforward, see below
 
 ###compilation###
 - make map.o, or make testmap
@@ -46,3 +43,7 @@ testmap.c - a test suite that hits key functionality
 
 ###todo###
 - thread safety
+
+###license###
+[MIT license](http://opensource.org/licenses/MIT)
+
